@@ -1,14 +1,14 @@
-#Git e Github: controle e compartilhe seu código
+# Git e Github: controle e compartilhe seu código
 
-##Comandos Básicos
-###Iniciando um repositório e versionamento pelo Git
+## Comandos Básicos
+### Iniciando um repositório e versionamento pelo Git
 ```
 mkdir - Cria um novo repositório.
 cd - Navega entre os repositórios.
 git init - Inicializa o monitoramento do git sobre o repositória atual.
 ```
 
-###Atualizando modificações de um arquivo
+### Atualizando modificações de um arquivo
 ```
 touch - Cria um arquivo.
 git status- Mostra estágio dos arquivos no repositório.
@@ -23,7 +23,7 @@ git log --graph - Exibe graficamente as mudanças realizadas pela branch atual e
 ```
 
 
-###Criando um servidor local para compartilhar dados
+### Criando um servidor local para compartilhar dados
 ```
 git init --bare - Funcionam como um servidor e são considerados repositórios apenas para armazenamento que contém apenas as alterações dos arquivos, e não uma cópia física de cada um dos arquivos.
 git remote - Lista todos repositórios remotos que são reconhecidos localmente.
@@ -32,14 +32,14 @@ git remote -v - Além de listar os repositórios remotos, também informa a rota
 git clone <caminho_servidor_remoto> - Copia localmente os dados de um repositório remoto.
 ```
 
-###Sincronizando dados e repositórios
+### Sincronizando dados e repositórios
 ```
 git fetch <nome_servidor_remoto> <nome_branch > - Traz referências do repositório remoto localmente a fim de verificar diferenças que possam ter ocorrido mas não gera nenhum tipo de mudança localmente.
 git pull <nome_servidor_remoto> <nome_branch > - Traz referências do repositório remoto incorporando-as localmente. 
 git push <nome_servidor_remoto> <nome_branch > - Envia para o repositório remoto as modificações locais.
 ```
 
-###Ramificações
+### Ramificações
 ```
 git branch - lista as ramifições de trabalho
 git branch <nome_branch> - Cria uma nova ramificação a partir da ramificação atual.
@@ -49,13 +49,13 @@ git branch -d <nome_branch> - Exclui uma ramificação. É necessário realizar 
 git push <nome_servidor_remoto> --delete <nome_branch> - Exclui uma ramificação remota.
 ```
 
-###Atualizando Branchs
+### Atualizando Branchs
 ```
 git merge <branch_origem> - Atualiza a branch atual com os dados da branch origem e gera um commit
 git rebase <branch_origem> - Atualiza a branch atual com os dados da branch origem, porém, não gera um commit dessa ação.
 ```
 
-###Guia de Rebase
+### Guia de Rebase
 ```
 git checkout <branch_origem>
 git pull
@@ -67,8 +67,8 @@ git merge <branch_de_trabalho>
 ```
 
 
-##Informações Adicionais
-###Estágios de modificação dos arquivos no repositório
+## Informações Adicionais
+### Estágios de modificação dos arquivos no repositório
 __Unmodified (não modificado)__
 >Estado em que o repositório não possuí nenhum tipo de alteração.
 
@@ -84,6 +84,6 @@ __Deleted (excluido)__
 __Staged ou Stage (preparado)__
 >Após realizar alterações ou criação de arquivos, precisamos informar ao Git quais deles serão adicionados à nova versão, o Git precisa saber que o arquivo foi modificado e agora está na área de preparação para ser consolidado.
 
-###Ignorando arquivos
+### Ignorando arquivos
 __.gitignore__
 >Neste arquivo podemos anotar arquivos e diretórios que podem ser ignorados pelos Git e não são necessários ter um controle sobre eles, geralmente podem ser arquivos de configuração de ambiente ou qualquer outro que não queremos que faça parte do nosso diretório monitorado pelo Git.
