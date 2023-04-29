@@ -9,19 +9,19 @@
    - [Ramificações](#1.5)
    - [Atualizando Branchs](#1.6)
    - [Guia de Rebase](#1.7)
+   - [Versões de repositório e de arquivos](#1.8)
  - [Informações Adicionais](#2)
 
+## [Comandos Básicos](#0) <a id='1'></a>
 
-## Comandos Básicos <a id='1'></a>
-
-### Iniciando um repositório e versionamento pelo Git <a id='1.1'></a>
+### [Iniciando um repositório e versionamento pelo Git](#0) <a id='1.1'></a>
 ```
 mkdir - Cria um novo repositório.
 cd - Navega entre os repositórios.
 git init - Inicializa o monitoramento do Git sobre o repositória atual.
 ```
 
-### Atualizando modificações de um arquivo <a id='1.2'></a>
+### [Atualizando modificações de um arquivo](#0) <a id='1.2'></a>
 ```
 touch - Cria um arquivo.
 git status - Mostra estágio dos arquivos no repositório.
@@ -36,7 +36,7 @@ git log -p - Exibe as mudanças realizadas em cada commit.
 git log --graph - Exibe graficamente as mudanças realizadas pela branch atual e possíveis ramificações.
 ```
 
-### Criando um servidor local para compartilhar dados <a id='1.3'></a>
+### [Criando um servidor local para compartilhar dados](#0) <a id='1.3'></a>
 ```
 git init --bare - Funcionam como um servidor e são considerados repositórios apenas para armazenamento de alterações dos arquivos, e não uma cópia física de cada um dos arquivos.
 git remote - Lista todos repositórios remotos que são reconhecidos localmente.
@@ -46,14 +46,14 @@ git remote remove <nome_servidor_remoto> - Remove um repositório remoto.
 git clone <caminho_servidor_remoto> - Copia localmente os dados de um repositório remoto.
 ```
 
-### Sincronizando dados e repositórios <a id='1.4'></a>
+### [Sincronizando dados e repositórios](#0) <a id='1.4'></a>
 ```
 git fetch <nome_servidor_remoto> <nome_branch > - Traz referências do repositório remoto localmente a fim de verificar diferenças que possam ter ocorrido mas não gera nenhum tipo de mudança localmente.
 git pull <nome_servidor_remoto> <nome_branch > - Traz referências do repositório remoto incorporando-as localmente. 
 git push <nome_servidor_remoto> <nome_branch > - Envia para o repositório remoto as modificações locais.
 ```
 
-### Ramificações <a id='1.5'></a>
+### [Ramificações](#0) <a id='1.5'></a>
 ```
 git branch - Lista as ramifições de trabalho
 git branch <nome_branch> - Cria uma nova ramificação a partir da ramificação atual.
@@ -63,13 +63,13 @@ git branch -d <nome_branch> - Exclui uma ramificação. É necessário realizar 
 git push <nome_servidor_remoto> --delete <nome_branch> - Exclui uma ramificação remota.
 ```
 
-### Atualizando Branchs <a id='1.6'></a>
+### [Atualizando Branchs](#0) <a id='1.6'></a>
 ```
 git merge <branch_origem> - Atualiza a branch atual com os dados da branch origem e gera um commit
 git rebase <branch_origem> - Atualiza a branch atual com os dados da branch origem, porém, não gera um commit dessa ação.
 ```
 
-### Guia de Rebase <a id='1.7'></a>
+### [Guia de Rebase](#0) <a id='1.7'></a>
 ```
 git checkout <branch_origem>
 git pull
@@ -86,9 +86,9 @@ git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um dete
 git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
 ```
 
-## Informações Adicionais <a id='2'></a>
+## [Informações Adicionais](#0) <a id='2'></a>
 
-### Estágios de modificação dos arquivos no repositório <a id='2.1'></a>
+### [Estágios de modificação dos arquivos no repositório](#0) <a id='2.1'></a>
 __Unmodified (não modificado)__
 >Estado em que o repositório não possuí nenhum tipo de alteração.
 
@@ -104,6 +104,6 @@ __Deleted (excluido)__
 __Staged ou Stage (preparado)__
 >Após realizar alterações ou criação de arquivos, precisamos informar ao Git quais deles serão adicionados à nova versão, o Git precisa saber que o arquivo foi modificado e agora está na área de preparação para ser consolidado.
 
-### Ignorando arquivos
+### [Ignorando arquivos](#0)
 __.gitignore__
 >Neste arquivo podemos anotar arquivos e diretórios que podem ser ignorados pelos Git e não são necessários ter um controle sobre eles, geralmente podem ser arquivos de configuração de ambiente ou qualquer outro que não queremos que faça parte do nosso diretório monitorado pelo Git.
