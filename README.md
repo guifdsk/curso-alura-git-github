@@ -1,6 +1,6 @@
 # Git e Github: controle e compartilhe seu código
 
-## Índice
+## Índice <a id='indice'></a>
 - [Comandos Básicos](#1)
    - [Iniciando um repositório e versionamento pelo Git](#1.1)
    - [Atualizando modificações de um arquivo](#1.2)
@@ -80,7 +80,7 @@ git checkout <branch_origem>
 git merge <branch_de_trabalho>
 ```
 
-### Versões de repositório e de arquivos <a id='1.7'></a>
+### [Versões de repositório e de arquivos](#indice) <a id='1.7'></a>
 ```
 git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
 git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
