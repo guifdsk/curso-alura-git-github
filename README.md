@@ -32,21 +32,21 @@ git commit -am "mensagem" - Adiciona todos os arquivos modificados na área de s
 git commit -m "mensagem" -m "mensagem adicional" - Grava o estado do seu repositório atual + duas mensagens das alterações realizadas.
 ```
 
-### [Criando um servidor local para compartilhar dados](#0) <a id='1.3'></a>
+### [Trabalhando com servidor local e repositórios remotos](#0) <a id='1.3'></a>
 ```
 git init --bare - Funcionam como um servidor e são considerados repositórios apenas para armazenamento de alterações dos arquivos, e não uma cópia física de cada um dos arquivos.
 git remote - Lista todos repositórios remotos que são reconhecidos localmente.
-git remote add <nome_servidor_remoto> <caminho> - Adiciona um servidor remoto localmente, sendo que podemos dar um nome para esse servidor e em seguida colar a rota no qual ele se encontra, podendo ser uma rota de rede ou url.
+git remote add <nome_repositorio_remoto> <caminho> - Adiciona um repositório remoto localmente, sendo que podemos dar um nome para esse repositório e em seguida colar a rota no qual ele se encontra, podendo ser uma rota de rede ou url.
 git remote -v - Além de listar os repositórios remotos, também informa a rota em que ele está localizado.
-git remote remove <nome_servidor_remoto> - Remove um repositório remoto.
-git clone <caminho_servidor_remoto> - Copia localmente os dados de um repositório remoto.
+git remote remove <nome_repositorio_remoto> - Remove um repositório remoto.
+git clone <caminho_repositorio_remoto> - Copia localmente os dados de um repositório remoto.
 ```
 
 ### [Sincronizando dados e repositórios](#0) <a id='1.4'></a>
 ```
-git fetch <nome_servidor_remoto> <nome_branch > - Traz referências do repositório remoto localmente a fim de verificar diferenças que possam ter ocorrido mas não gera nenhum tipo de mudança localmente.
-git pull <nome_servidor_remoto> <nome_branch > - Traz referências do repositório remoto incorporando-as localmente. 
-git push <nome_servidor_remoto> <nome_branch > - Envia para o repositório remoto as modificações locais.
+git fetch <nome_repositorio_remoto> <nome_branch > - Traz referências do repositório remoto localmente a fim de verificar diferenças que possam ter ocorrido mas não gera nenhum tipo de mudança localmente.
+git pull <nome_repositorio_remoto> <nome_branch > - Traz referências do repositório remoto incorporando-as localmente. 
+git push <nome_repositorio_remoto> <nome_branch > - Envia para o repositório remoto as modificações locais.
 ```
 
 ### [Branchs](#0) <a id='1.5'></a>
@@ -56,7 +56,7 @@ git branch <nome_branch> - Cria uma nova branch a partir da branch atual.
 git checkout <nome_branch> - Navega entre as branch.
 git checkout -b <nome_branch> - Cria uma nova branch e navega até ela em sequência.
 git branch -d <nome_branch> - Exclui uma branch. É necessário realizar a exclusão a partir de outra branch.
-git push <nome_servidor_remoto> --delete <nome_branch> - Exclui uma branch remota.
+git push <nome_repositorio_remoto> --delete <nome_branch> - Exclui uma branch remota.
 ```
 
 ### [Atualizando Branchs](#0) <a id='1.6'></a>
