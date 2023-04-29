@@ -12,18 +12,16 @@
  2. [Informações Adicionais](#2)
 
 
-## Comandos Básicos 
+## Comandos Básicos <a id='1'></a>
 
-<div id='1.1'></div>
-### Iniciando um repositório e versionamento pelo Git
+### Iniciando um repositório e versionamento pelo Git <a id='1.1'></a>
 ```
 mkdir - Cria um novo repositório.
 cd - Navega entre os repositórios.
 git init - Inicializa o monitoramento do Git sobre o repositória atual.
 ```
 
-<div id='1.2'></div>
-### Atualizando modificações de um arquivo 
+### Atualizando modificações de um arquivo <a id='1.2'></a>
 ```
 touch - Cria um arquivo.
 git status - Mostra estágio dos arquivos no repositório.
