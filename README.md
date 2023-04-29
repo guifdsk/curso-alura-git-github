@@ -1,28 +1,43 @@
 # Git e Github: controle e compartilhe seu código
 
+## Índice
+ 1. [Comandos Básicos](#1)
+    1.1. [Iniciando um repositório e versionamento pelo Git](#1.1)
+    1.2. [Atualizando modificações de um arquivo](#1.2)
+    1.3. [Criando um servidor local para compartilhar dados](#1.3)
+    1.4. [Sincronizando dados e repositórios](#1.4)
+    1.5. [Ramificações](#1.5)
+    1.6. [Atualizando Branchs](#1.6)
+    1.6. [Guia de Rebase](#1.7)
+ 2. [Informações Adicionais](#2)
+
+<div id='1'/>
 ## Comandos Básicos
+<div id='1.1'/>
 ### Iniciando um repositório e versionamento pelo Git
 ```
 mkdir - Cria um novo repositório.
 cd - Navega entre os repositórios.
-git init - Inicializa o monitoramento do git sobre o repositória atual.
+git init - Inicializa o monitoramento do Git sobre o repositória atual.
 ```
 
+<div id='1.2'/>
 ### Atualizando modificações de um arquivo
 ```
 touch - Cria um arquivo.
 git status- Mostra estágio dos arquivos no repositório.
 git add <nome_do_arquivo> - Adiciona o arquivo especificado na area de stage.
 git add . - Adiciona todos arquivos que contenham modificações ou foram criados na area de stage.
-git commit -m - Guardar o estado do seu repositório atual + mensagem das alterações realizadas.
-git commit -am - adiciona todos os arquivos modificados na área de stage e, em seguida, guardar o estado do seu repositório atual + mensagem das alterações realizadas.
+git commit -m "mensagem" - Guardar o estado do seu repositório atual + mensagem das alterações realizadas.
+git commit -am "mensagem"- adiciona todos os arquivos modificados na área de stage e, em seguida, guardar o estado do seu repositório atual + mensagem das alterações realizadas.
+git commit -m "mensagem" -m "mensagem adicional" :  Guardar o estado do seu repositório atual + duas mensagens das alterações realizadas.
 git log - Exibe os informações sobre os commits realizados.
 git log -n - Exibe a quantidade "n" (ex.: 1, 2, 3) de logs dos commits realizados.
 git log -p - Exibe as mudanças realizadas em cada commit.
 git log --graph - Exibe graficamente as mudanças realizadas pela branch atual e possíveis ramificações.
 ```
 
-
+<div id='1.3'/>
 ### Criando um servidor local para compartilhar dados
 ```
 git init --bare - Funcionam como um servidor e são considerados repositórios apenas para armazenamento que contém apenas as alterações dos arquivos, e não uma cópia física de cada um dos arquivos.
@@ -32,6 +47,7 @@ git remote -v - Além de listar os repositórios remotos, também informa a rota
 git clone <caminho_servidor_remoto> - Copia localmente os dados de um repositório remoto.
 ```
 
+<div id='1.4'/>
 ### Sincronizando dados e repositórios
 ```
 git fetch <nome_servidor_remoto> <nome_branch > - Traz referências do repositório remoto localmente a fim de verificar diferenças que possam ter ocorrido mas não gera nenhum tipo de mudança localmente.
@@ -39,6 +55,7 @@ git pull <nome_servidor_remoto> <nome_branch > - Traz referências do repositór
 git push <nome_servidor_remoto> <nome_branch > - Envia para o repositório remoto as modificações locais.
 ```
 
+<div id='1.5'/>
 ### Ramificações
 ```
 git branch - lista as ramifições de trabalho
@@ -49,12 +66,14 @@ git branch -d <nome_branch> - Exclui uma ramificação. É necessário realizar 
 git push <nome_servidor_remoto> --delete <nome_branch> - Exclui uma ramificação remota.
 ```
 
+<div id='1.6'/>
 ### Atualizando Branchs
 ```
 git merge <branch_origem> - Atualiza a branch atual com os dados da branch origem e gera um commit
 git rebase <branch_origem> - Atualiza a branch atual com os dados da branch origem, porém, não gera um commit dessa ação.
 ```
 
+<div id='1.7'/>
 ### Guia de Rebase
 ```
 git checkout <branch_origem>
@@ -66,7 +85,7 @@ git checkout <branch_origem>
 git merge <branch_de_trabalho>
 ```
 
-
+<div id='2'/>
 ## Informações Adicionais
 ### Estágios de modificação dos arquivos no repositório
 __Unmodified (não modificado)__
