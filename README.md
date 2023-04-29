@@ -5,11 +5,11 @@
    - [Iniciando um repositório e versionamento pelo Git](#1.1)
    - [Atualizando modificações de um arquivo](#1.2)
    - [Criando um servidor local para compartilhar dados](#1.3)
-   - [Sincronizando dados e repositórios](#1.4)
-   - [Ramificações](#1.5)
-   - [Atualizando Branchs](#1.6)
-   - [Guia de Rebase](#1.7)
-   - [Versões de repositório e de arquivos](#1.8)
+   - [Ramificações](#1.4)
+   - [Sincronizando dados e repositórios](#1.5)
+   - [Guia de Rebase](#1.6)
+   - [Versões de repositório e de arquivos](#1.7)
+   - [Vizualizando alterações](#1.8)
  - [Informações Adicionais](#2)
 
 ## [Comandos Básicos](#0) <a id='1'></a>
@@ -42,30 +42,30 @@ git remote remove <nome_repositorio_remoto> - Remove um repositório remoto.
 git clone <caminho_repositorio_remoto> - Copia localmente os dados de um repositório remoto.
 ```
 
-### [Sincronizando dados e repositórios](#0) <a id='1.4'></a>
+### [Branchs](#0) <a id='1.4'></a>
+```
+git branch - Lista as branchs de trabalho.
+git branch -a - Lista as branchs remotas.
+git branch <nome_nova_branch> - Cria uma nova branch a partir da branch atual.
+git checkout <nome_branch> - Navega entre as branch.
+git checkout -b <nome_nova_branch> - Cria uma nova branch e navega até ela em sequência.
+git branch -d <nome_branch> - Exclui uma branch de forma segura, caso não tenha realizado um push dos dados commitados não será possivel realizar a exclusão. É necessário realizar a exclusão a partir de outra branch.
+git branch -D <nome_branch> - Força a exclusão da branch, idependentemente do seu estado. É necessário realizar a exclusão a partir de outra branch.
+git push <nome_repositorio_remoto> --delete <nome_branch> - Exclui uma branch remota.
+git branch -m <novo_nome_branch> - Renomeia a branch atual de trabalho.
+git branch -m <nome_branch> <novo_nome_branch> - Renomeia outra branch.
+```
+
+### [Sincronizando dados e repositórios](#0) <a id='1.5'></a>
 ```
 git fetch <nome_repositorio_remoto> <nome_branch > - Traz referências do repositório remoto localmente a fim de verificar diferenças que possam ter ocorrido mas não gera nenhum tipo de mudança localmente.
 git pull <nome_repositorio_remoto> <nome_branch > - Traz referências do repositório remoto incorporando-as localmente. 
 git push <nome_repositorio_remoto> <nome_branch > - Envia para o repositório remoto as modificações locais.
-```
-
-### [Branchs](#0) <a id='1.5'></a>
-```
-git branch - Lista as branchs de trabalho
-git branch <nome_branch> - Cria uma nova branch a partir da branch atual.
-git checkout <nome_branch> - Navega entre as branch.
-git checkout -b <nome_branch> - Cria uma nova branch e navega até ela em sequência.
-git branch -d <nome_branch> - Exclui uma branch. É necessário realizar a exclusão a partir de outra branch.
-git push <nome_repositorio_remoto> --delete <nome_branch> - Exclui uma branch remota.
-```
-
-### [Atualizando Branchs](#0) <a id='1.6'></a>
-```
 git merge <branch_origem> - Atualiza a branch atual com os dados da branch origem e gera um commit
 git rebase <branch_origem> - Atualiza a branch atual com os dados da branch origem, porém, não gera um commit dessa ação.
 ```
 
-### [Guia de Rebase](#0) <a id='1.7'></a>
+### [Guia de Rebase](#0) <a id='1.6'></a>
 ```
 git checkout <branch_origem>
 git pull
@@ -76,13 +76,13 @@ git checkout <branch_origem>
 git merge <branch_de_trabalho>
 ```
 
-### [Versões de repositório e de arquivos](#0) <a id='1.8'></a>
+### [Versões de repositório e de arquivos](#0) <a id='1.7'></a>
 ```
 git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
 git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
 ```
 
-### [Vizualizando alterações](#0) <a id='1.9'></a>
+### [Vizualizando alterações](#0) <a id='1.8'></a>
 ```
 git log - Exibe os informações sobre os commits realizados.
 git log -n - Exibe a quantidade "n" (ex.: 1, 2, 3) de logs dos commits realizados.
