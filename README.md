@@ -23,17 +23,13 @@ git init - Inicializa o monitoramento do Git sobre o repositória atual.
 
 ### [Atualizando modificações de um arquivo](#0) <a id='1.2'></a>
 ```
-touch - Cria um arquivo.
+touch <nome_do_arquivo> - Cria um arquivo.
 git status - Mostra estágio dos arquivos no repositório.
 git add <nome_do_arquivo> - Adiciona o arquivo especificado na area de stage.
-git add . - Adiciona todos arquivos que contenham modificações ou foram criados na area de stage.
-git commit -m "mensagem" - Guardar o estado do seu repositório atual + mensagem das alterações realizadas.
-git commit -am "mensagem" - Adiciona todos os arquivos modificados na área de stage e, em seguida, guardar o estado do seu repositório atual + mensagem das alterações realizadas.
-git commit -m "mensagem" -m "mensagem adicional" :  Guardar o estado do seu repositório atual + duas mensagens das alterações realizadas.
-git log - Exibe os informações sobre os commits realizados.
-git log -n - Exibe a quantidade "n" (ex.: 1, 2, 3) de logs dos commits realizados.
-git log -p - Exibe as mudanças realizadas em cada commit.
-git log --graph - Exibe graficamente as mudanças realizadas pela branch atual e possíveis ramificações.
+git add . - Adiciona todos arquivos que contenham modificações, foram criados ou removidos na area de stage.
+git commit -m "mensagem" - Grava o estado do seu repositório atual + mensagem das alterações realizadas.
+git commit -am "mensagem" - Adiciona todos os arquivos modificados na área de stage e, em seguida, grava o estado do seu repositório atual + mensagem das alterações realizadas.
+git commit -m "mensagem" -m "mensagem adicional" - Grava o estado do seu repositório atual + duas mensagens das alterações realizadas.
 ```
 
 ### [Criando um servidor local para compartilhar dados](#0) <a id='1.3'></a>
@@ -53,14 +49,14 @@ git pull <nome_servidor_remoto> <nome_branch > - Traz referências do repositór
 git push <nome_servidor_remoto> <nome_branch > - Envia para o repositório remoto as modificações locais.
 ```
 
-### [Ramificações](#0) <a id='1.5'></a>
+### [Branchs](#0) <a id='1.5'></a>
 ```
-git branch - Lista as ramifições de trabalho
-git branch <nome_branch> - Cria uma nova ramificação a partir da ramificação atual.
-git checkout <nome_branch> - Navega entre as ramificações.
-git checkout -b <nome_branch> - Cria uma nova ramificação e navega até ela em sequência.
-git branch -d <nome_branch> - Exclui uma ramificação. É necessário realizar a exclusão a partir de outra ramificação.
-git push <nome_servidor_remoto> --delete <nome_branch> - Exclui uma ramificação remota.
+git branch - Lista as branchs de trabalho
+git branch <nome_branch> - Cria uma nova branch a partir da branch atual.
+git checkout <nome_branch> - Navega entre as branch.
+git checkout -b <nome_branch> - Cria uma nova branch e navega até ela em sequência.
+git branch -d <nome_branch> - Exclui uma branch. É necessário realizar a exclusão a partir de outra branch.
+git push <nome_servidor_remoto> --delete <nome_branch> - Exclui uma branch remota.
 ```
 
 ### [Atualizando Branchs](#0) <a id='1.6'></a>
@@ -84,6 +80,14 @@ git merge <branch_de_trabalho>
 ```
 git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
 git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
+```
+
+### [Vizualizando alterações](#0) <a id='1.9'></a>
+```
+git log - Exibe os informações sobre os commits realizados.
+git log -n - Exibe a quantidade "n" (ex.: 1, 2, 3) de logs dos commits realizados.
+git log -p - Exibe as mudanças realizadas em cada commit.
+git log --graph - Exibe graficamente as mudanças realizadas pela branch atual e possíveis branchs.
 ```
 
 ## [Informações Adicionais](#0) <a id='2'></a>
