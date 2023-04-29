@@ -1,6 +1,6 @@
 # Git e Github: controle e compartilhe seu código
 
-## Índice <a id='indice'></a>
+## Índice <a id='0'></a>
 - [Comandos Básicos](#1)
    - [Iniciando um repositório e versionamento pelo Git](#1.1)
    - [Atualizando modificações de um arquivo](#1.2)
@@ -63,13 +63,13 @@ git branch -d <nome_branch> - Exclui uma ramificação. É necessário realizar 
 git push <nome_servidor_remoto> --delete <nome_branch> - Exclui uma ramificação remota.
 ```
 
-### Atualizando Branchs <a id='1.5'></a>
+### Atualizando Branchs <a id='1.6'></a>
 ```
 git merge <branch_origem> - Atualiza a branch atual com os dados da branch origem e gera um commit
 git rebase <branch_origem> - Atualiza a branch atual com os dados da branch origem, porém, não gera um commit dessa ação.
 ```
 
-### Guia de Rebase <a id='1.6'></a>
+### Guia de Rebase <a id='1.7'></a>
 ```
 git checkout <branch_origem>
 git pull
@@ -80,7 +80,7 @@ git checkout <branch_origem>
 git merge <branch_de_trabalho>
 ```
 
-### [Versões de repositório e de arquivos](#indice) <a id='1.7'></a>
+### [Versões de repositório e de arquivos](#0) <a id='1.8'></a>
 ```
 git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
 git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
