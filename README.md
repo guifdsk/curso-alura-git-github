@@ -11,9 +11,10 @@
     1.6. [Guia de Rebase](#1.7)
  2. [Informações Adicionais](#2)
 
-<div id='1'/>
-## Comandos Básicos
-<div id='1.1'/>
+<div id='1'></div>
+## Comandos Básicos 
+
+<div id='1.1'></div>
 ### Iniciando um repositório e versionamento pelo Git
 ```
 mkdir - Cria um novo repositório.
@@ -21,8 +22,8 @@ cd - Navega entre os repositórios.
 git init - Inicializa o monitoramento do Git sobre o repositória atual.
 ```
 
-<div id='1.2'/>
-### Atualizando modificações de um arquivo
+<div id='1.2'></div>
+### Atualizando modificações de um arquivo 
 ```
 touch - Cria um arquivo.
 git status - Mostra estágio dos arquivos no repositório.
@@ -37,7 +38,7 @@ git log -p - Exibe as mudanças realizadas em cada commit.
 git log --graph - Exibe graficamente as mudanças realizadas pela branch atual e possíveis ramificações.
 ```
 
-<div id='1.3'/>
+<div id='1.3'></div>
 ### Criando um servidor local para compartilhar dados
 ```
 git init --bare - Funcionam como um servidor e são considerados repositórios apenas para armazenamento de alterações dos arquivos, e não uma cópia física de cada um dos arquivos.
@@ -48,7 +49,7 @@ git remote remove <nome_servidor_remoto> - Remove um repositório remoto.
 git clone <caminho_servidor_remoto> - Copia localmente os dados de um repositório remoto.
 ```
 
-<div id='1.4'/>
+<div id='1.4'></div>
 ### Sincronizando dados e repositórios
 ```
 git fetch <nome_servidor_remoto> <nome_branch > - Traz referências do repositório remoto localmente a fim de verificar diferenças que possam ter ocorrido mas não gera nenhum tipo de mudança localmente.
@@ -56,7 +57,7 @@ git pull <nome_servidor_remoto> <nome_branch > - Traz referências do repositór
 git push <nome_servidor_remoto> <nome_branch > - Envia para o repositório remoto as modificações locais.
 ```
 
-<div id='1.5'/>
+<div id='1.5'></div>
 ### Ramificações
 ```
 git branch - Lista as ramifições de trabalho
@@ -67,14 +68,14 @@ git branch -d <nome_branch> - Exclui uma ramificação. É necessário realizar 
 git push <nome_servidor_remoto> --delete <nome_branch> - Exclui uma ramificação remota.
 ```
 
-<div id='1.6'/>
+<div id='1.6'></div>
 ### Atualizando Branchs
 ```
 git merge <branch_origem> - Atualiza a branch atual com os dados da branch origem e gera um commit
 git rebase <branch_origem> - Atualiza a branch atual com os dados da branch origem, porém, não gera um commit dessa ação.
 ```
 
-<div id='1.7'/>
+<div id='1.7'></div>
 ### Guia de Rebase
 ```
 git checkout <branch_origem>
@@ -86,14 +87,14 @@ git checkout <branch_origem>
 git merge <branch_de_trabalho>
 ```
 
-<div id='1.8'/>
+<div id='1.8'></div>
 ### Versões de repositório e de arquivos
 ```
 git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
 git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
 ```
 
-<div id='2'/>
+<div id='2'></div>
 ## Informações Adicionais
 ### Estágios de modificação dos arquivos no repositório
 __Unmodified (não modificado)__
