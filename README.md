@@ -25,11 +25,11 @@ git init - Inicializa o monitoramento do Git sobre o repositória atual.
 ### Atualizando modificações de um arquivo
 ```
 touch - Cria um arquivo.
-git status- Mostra estágio dos arquivos no repositório.
+git status - Mostra estágio dos arquivos no repositório.
 git add <nome_do_arquivo> - Adiciona o arquivo especificado na area de stage.
 git add . - Adiciona todos arquivos que contenham modificações ou foram criados na area de stage.
 git commit -m "mensagem" - Guardar o estado do seu repositório atual + mensagem das alterações realizadas.
-git commit -am "mensagem"- adiciona todos os arquivos modificados na área de stage e, em seguida, guardar o estado do seu repositório atual + mensagem das alterações realizadas.
+git commit -am "mensagem" - Adiciona todos os arquivos modificados na área de stage e, em seguida, guardar o estado do seu repositório atual + mensagem das alterações realizadas.
 git commit -m "mensagem" -m "mensagem adicional" :  Guardar o estado do seu repositório atual + duas mensagens das alterações realizadas.
 git log - Exibe os informações sobre os commits realizados.
 git log -n - Exibe a quantidade "n" (ex.: 1, 2, 3) de logs dos commits realizados.
@@ -40,10 +40,11 @@ git log --graph - Exibe graficamente as mudanças realizadas pela branch atual e
 <div id='1.3'/>
 ### Criando um servidor local para compartilhar dados
 ```
-git init --bare - Funcionam como um servidor e são considerados repositórios apenas para armazenamento que contém apenas as alterações dos arquivos, e não uma cópia física de cada um dos arquivos.
+git init --bare - Funcionam como um servidor e são considerados repositórios apenas para armazenamento de alterações dos arquivos, e não uma cópia física de cada um dos arquivos.
 git remote - Lista todos repositórios remotos que são reconhecidos localmente.
-git remote add <nome_servidor_remoto> <caminho> - adiciona um servidor remoto localmente, sendo que podemos dar um nome para esse servidor e em seguida colar a rota no qual ele se encontra, podendo ser uma rota de rede ou url.
+git remote add <nome_servidor_remoto> <caminho> - Adiciona um servidor remoto localmente, sendo que podemos dar um nome para esse servidor e em seguida colar a rota no qual ele se encontra, podendo ser uma rota de rede ou url.
 git remote -v - Além de listar os repositórios remotos, também informa a rota em que ele está localizado.
+git remote remove <nome_servidor_remoto> - Remove um repositório remoto.
 git clone <caminho_servidor_remoto> - Copia localmente os dados de um repositório remoto.
 ```
 
@@ -58,7 +59,7 @@ git push <nome_servidor_remoto> <nome_branch > - Envia para o repositório remot
 <div id='1.5'/>
 ### Ramificações
 ```
-git branch - lista as ramifições de trabalho
+git branch - Lista as ramifições de trabalho
 git branch <nome_branch> - Cria uma nova ramificação a partir da ramificação atual.
 git checkout <nome_branch> - Navega entre as ramificações.
 git checkout -b <nome_branch> - Cria uma nova ramificação e navega até ela em sequência.
@@ -83,6 +84,13 @@ git rebase <branch_origem>
 git push --force-with-tease - Esta opção permite forçar o push sem o risco de sobrescrever acidentalmente o trabalho de outra pessoa.
 git checkout <branch_origem>
 git merge <branch_de_trabalho>
+```
+
+<div id='1.8'/>
+### Versões de repositório e de arquivos
+```
+git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
+git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
 ```
 
 <div id='2'/>
