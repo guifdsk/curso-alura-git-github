@@ -27,6 +27,9 @@ touch <nome_do_arquivo> - Cria um arquivo.
 git status - Mostra estágio dos arquivos no repositório.
 git add <nome_do_arquivo> - Adiciona o arquivo especificado na area de stage.
 git add . - Adiciona todos arquivos que contenham modificações, foram criados ou removidos na area de stage.
+git checkout . - Remove as alterações realizadas em todos os arquivos que não foram para area de stage, deixando os arquivos como estavam no último commit.
+git checkout <nome_do_arquivo> - Remove as alterações realizadas em um arquivo que nao foi para area de stage, deixando-o como estava no último commit.
+git clean -df - Remove um arquivo criado que não foi para area de stage.
 git commit -m "mensagem" - Grava o estado do seu repositório atual + mensagem das alterações realizadas.
 git commit -am "mensagem" - Adiciona todos os arquivos modificados na área de stage e, em seguida, grava o estado do seu repositório atual + mensagem das alterações realizadas.
 git commit -m "mensagem" -m "mensagem adicional" - Grava o estado do seu repositório atual + duas mensagens das alterações realizadas.
