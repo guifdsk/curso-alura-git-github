@@ -1,4 +1,4 @@
-# Git e Github: controle e compartilhe seu código
+# Modulo Git e GitHub
 
 ## Índice <a id='0'></a>
 - [Comandos Básicos](#1)
@@ -8,7 +8,7 @@
    - [Ramificações](#1.4)
    - [Sincronizando dados e repositórios](#1.5)
    - [Guia de Rebase](#1.6)
-   - [Versões de repositório e de arquivos](#1.7)
+   - [Versões de repositórios e de arquivos](#1.7)
    - [Vizualizando alterações](#1.8)
  - [Informações Adicionais](#2)
 
@@ -79,7 +79,7 @@ git checkout <branch_origem>
 git merge <branch_de_trabalho>
 ```
 
-### [Versões de repositório e de arquivos](#0) <a id='1.7'></a>
+### [Versões de repositórios e de arquivos](#0) <a id='1.7'></a>
 ```
 git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
 git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
@@ -90,6 +90,8 @@ git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do
 git log - Exibe os informações sobre os commits realizados.
 git log -n - Exibe a quantidade "n" (ex.: 1, 2, 3) de logs dos commits realizados.
 git log -p - Exibe as mudanças realizadas em cada commit.
+git log --oneline - Exibe os commits realiziados de forma reduzida.
+git log --author="user_name" - Exibe commits realizado por um determinado autor.
 git log --graph - Exibe graficamente as mudanças realizadas pela branch atual e possíveis branchs.
 ```
 
