@@ -2,16 +2,16 @@
 
 ## Índice
  1. [Comandos Básicos](#1)
-    1.1. [Iniciando um repositório e versionamento pelo Git](#1.1)
-    1.2. [Atualizando modificações de um arquivo](#1.2)
-    1.3. [Criando um servidor local para compartilhar dados](#1.3)
-    1.4. [Sincronizando dados e repositórios](#1.4)
-    1.5. [Ramificações](#1.5)
-    1.6. [Atualizando Branchs](#1.6)
-    1.6. [Guia de Rebase](#1.7)
+   1.1. [Iniciando um repositório e versionamento pelo Git](#1.1)
+   1.2. [Atualizando modificações de um arquivo](#1.2)
+   1.3. [Criando um servidor local para compartilhar dados](#1.3)
+   1.4. [Sincronizando dados e repositórios](#1.4)
+   1.5. [Ramificações](#1.5)
+   1.6. [Atualizando Branchs](#1.6)
+   1.7. [Guia de Rebase](#1.7)
  2. [Informações Adicionais](#2)
 
-<div id='1'></div>
+
 ## Comandos Básicos 
 
 <div id='1.1'></div>
