@@ -88,7 +88,6 @@ git merge <branch_de_trabalho>
 ```
 git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
 git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
-checkout commit
 checkout versao
 criar versao
 stash
@@ -136,4 +135,6 @@ git checkout -b <nome_nova_branch> - Cria uma nova branch e navega até ela em s
 Restore
 git checkout -- . - Remove as alterações realizadas em todos os arquivos que não foram para area de stage, deixando os arquivos como estavam no último commit.
 git checkout -- <nome_do_arquivo> - Remove as alterações realizadas em um arquivo que nao foi para area de stage, deixando-o como estava no último commit.
+git checkout <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
+git checkout <hash_commit> - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
 ```
