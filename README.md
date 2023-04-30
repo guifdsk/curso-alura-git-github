@@ -16,20 +16,24 @@
 
 ### [Iniciando um repositório e versionamento pelo Git](#0) <a id='1.1'></a>
 ```
-mkdir - Cria um novo repositório.
-cd - Navega entre os repositórios.
-git init - Inicializa o monitoramento do Git sobre o repositória atual.
+mkdir - Cria um novo diretório.
+cd - Navega entre os diretórios.
+git init - Cria um repositório para monitoramento de versões.
 ```
 
 ### [Atualizando modificações de um arquivo](#0) <a id='1.2'></a>
 ```
 touch <nome_do_arquivo> - Cria um arquivo.
 git status - Mostra estágio dos arquivos no repositório.
+git checkout -- . - Remove as alterações realizadas em todos os arquivos que não foram para area de stage, deixando os arquivos como estavam no último commit.
+git checkout -- <nome_do_arquivo> - Remove as alterações realizadas em um arquivo que nao foi para area de stage, deixando-o como estava no último commit.
+git restore . - Remove as alterações realizadas em todos os arquivos que não foram para area de stage, deixando os arquivos como estavam no último commit.
+git restore <nome_do_arquivo> - Remove as alterações realizadas em um arquivo que nao foi para area de stage, deixando-o como estava no último commit.
+git clean -df - Remove um arquivo criado que não foi para area de stage.
 git add <nome_do_arquivo> - Adiciona o arquivo especificado na area de stage.
 git add . - Adiciona todos arquivos que contenham modificações, foram criados ou removidos na area de stage.
-git checkout . - Remove as alterações realizadas em todos os arquivos que não foram para area de stage, deixando os arquivos como estavam no último commit.
-git checkout <nome_do_arquivo> - Remove as alterações realizadas em um arquivo que nao foi para area de stage, deixando-o como estava no último commit.
-git clean -df - Remove um arquivo criado que não foi para area de stage.
+git restore --staged . - Retira todos arquivos da area de stage.
+git restore --staged <nome_do_arquivo> - Retira um arquivo da area de stage.
 git commit -m "mensagem" - Grava o estado do seu repositório atual + mensagem das alterações realizadas.
 git commit -am "mensagem" - Adiciona todos os arquivos modificados na área de stage e, em seguida, grava o estado do seu repositório atual + mensagem das alterações realizadas.
 git commit -m "mensagem" -m "mensagem adicional" - Grava o estado do seu repositório atual + duas mensagens das alterações realizadas.
@@ -51,7 +55,8 @@ git branch - Lista as branchs de trabalho.
 git branch -a - Lista as branchs remotas.
 git branch <nome_nova_branch> - Cria uma nova branch a partir da branch atual.
 git checkout <nome_branch> - Navega entre as branch.
-git checkout -b <nome_nova_branch> - Cria uma nova branch e navega até ela em sequência.
+git switch <nome_branch> - Navega entre as branch.
+git switch -c <nome_nova_branch> - Cria uma nova branch e navega até ela em sequência.
 git branch -d <nome_branch> - Exclui uma branch de forma segura, caso não tenha realizado um push dos dados commitados não será possivel realizar a exclusão. É necessário realizar a exclusão a partir de outra branch.
 git branch -D <nome_branch> - Força a exclusão da branch, idependentemente do seu estado. É necessário realizar a exclusão a partir de outra branch.
 git push <nome_repositorio_remoto> --delete <nome_branch> - Exclui uma branch remota.
@@ -66,6 +71,8 @@ git pull <nome_repositorio_remoto> <nome_branch > - Traz referências do reposit
 git push <nome_repositorio_remoto> <nome_branch > - Envia para o repositório remoto as modificações locais.
 git merge <branch_origem> - Atualiza a branch atual com os dados da branch origem e gera um commit
 git rebase <branch_origem> - Atualiza a branch atual com os dados da branch origem, porém, não gera um commit dessa ação.
+
+git revert
 ```
 
 ### [Guia de Rebase](#0) <a id='1.6'></a>
@@ -83,6 +90,10 @@ git merge <branch_de_trabalho>
 ```
 git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
 git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
+checkout commit
+checkout versao
+criar versao
+stash
 ```
 
 ### [Vizualizando alterações](#0) <a id='1.8'></a>
