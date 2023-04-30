@@ -25,8 +25,6 @@ git init - Cria um repositório para monitoramento de versões.
 ```
 touch <nome_do_arquivo> - Cria um arquivo.
 git status - Mostra estágio dos arquivos no repositório.
-git checkout -- . - Remove as alterações realizadas em todos os arquivos que não foram para area de stage, deixando os arquivos como estavam no último commit.
-git checkout -- <nome_do_arquivo> - Remove as alterações realizadas em um arquivo que nao foi para area de stage, deixando-o como estava no último commit.
 git restore . - Remove as alterações realizadas em todos os arquivos que não foram para area de stage, deixando os arquivos como estavam no último commit.
 git restore <nome_do_arquivo> - Remove as alterações realizadas em um arquivo que nao foi para area de stage, deixando-o como estava no último commit.
 git clean -df - Remove um arquivo criado que não foi para area de stage.
@@ -54,9 +52,9 @@ git clone <caminho_repositorio_remoto> - Copia localmente os dados de um reposit
 git branch - Lista as branchs de trabalho.
 git branch -a - Lista as branchs remotas.
 git branch <nome_nova_branch> - Cria uma nova branch a partir da branch atual.
-git checkout <nome_branch> - Navega entre as branch.
 git switch <nome_branch> - Navega entre as branch.
 git switch -c <nome_nova_branch> - Cria uma nova branch e navega até ela em sequência.
+git switch - - Retorna para branch main/master
 git branch -d <nome_branch> - Exclui uma branch de forma segura, caso não tenha realizado um push dos dados commitados não será possivel realizar a exclusão. É necessário realizar a exclusão a partir de outra branch.
 git branch -D <nome_branch> - Força a exclusão da branch, idependentemente do seu estado. É necessário realizar a exclusão a partir de outra branch.
 git push <nome_repositorio_remoto> --delete <nome_branch> - Exclui uma branch remota.
@@ -77,12 +75,12 @@ git revert
 
 ### [Guia de Rebase](#0) <a id='1.6'></a>
 ```
-git checkout <branch_origem>
+git switch <branch_origem>
 git pull
-git checkout <branch_de_trabalho>
+git switch <branch_de_trabalho>
 git rebase <branch_origem>
 git push --force-with-tease - Esta opção permite forçar o push sem o risco de sobrescrever acidentalmente o trabalho de outra pessoa.
-git checkout <branch_origem>
+git switch <branch_origem>
 git merge <branch_de_trabalho>
 ```
 
@@ -124,6 +122,18 @@ __Deleted (excluido)__
 __Staged ou Stage (preparado)__
 >Após realizar alterações ou criação de arquivos, precisamos informar ao Git quais deles serão adicionados à nova versão, o Git precisa saber que o arquivo foi modificado e agora está na área de preparação para ser consolidado.
 
-### [Ignorando arquivos](#0)
-__.gitignore__
->Neste arquivo podemos anotar arquivos e diretórios que podem ser ignorados pelos Git e não são necessários ter um controle sobre eles, geralmente podem ser arquivos de configuração de ambiente ou qualquer outro que não queremos que faça parte do nosso diretório monitorado pelo Git.
+### [Ignorando arquivos com .gitignore](#0)
+
+>Nele podemos anotar arquivos e diretórios que podem ser ignorados e ficam fora da visão do Git para o controle de versionamento, geralmente podem ser arquivos de configuração de ambiente ou qualquer outro que não queremos que faça parte do nosso diretório monitorado pelo Git.
+
+### [Git Checkout - Switch - Restore](#0)
+> A partir da versão 2.23.0 foram implementados novos comandos e ambos vêm com o intuito de dividir responsabilidades do comando "checkout", e serem mais específicos para as funções que se propõem realizar. Os novos comandos são o git restore e o git switch e ambos foram citados nos modulos acima, substituindo os comandos abaixo, por exemplo:
+```
+Switch
+git checkout <nome_branch> - Navega entre as branch.
+git checkout -b <nome_nova_branch> - Cria uma nova branch e navega até ela em sequência.
+
+Restore
+git checkout -- . - Remove as alterações realizadas em todos os arquivos que não foram para area de stage, deixando os arquivos como estavam no último commit.
+git checkout -- <nome_do_arquivo> - Remove as alterações realizadas em um arquivo que nao foi para area de stage, deixando-o como estava no último commit.
+```
