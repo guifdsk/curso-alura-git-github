@@ -273,4 +273,5 @@ git checkout <hash_commit>
 * [__Cheatsheets__](https://devhints.io/)
 * [__Como escrever um README incrível no seu Github__](https://www.alura.com.br/artigos/escrever-bom-readme)
 * [__Git Documentação__](https://git-scm.com/docs/git/pt_BR)
+* [__Linking a pull request to an issue__](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)
 * [__What is version control?__](https://www.atlassian.com/git/tutorials/what-is-version-control)
