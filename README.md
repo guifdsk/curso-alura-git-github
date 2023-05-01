@@ -50,11 +50,11 @@ git commit -m "mensagem" -m "mensagem adicional"
 
 `git status` - Lista os arquivos e seus respectivos estágios no diretório, sendo eles: preparados(_Staged_), despreparados(_Modified_/_Deleted_) e não foram monitorados(_Untracked_).
 
-`git restore .` - Remove as alterações realizadas nos arquivos que estão visíveis (working tree) e não foram adicionados à área _staged_, retornando ao estado do _commit_ atual (_HEAD_).
+`git restore .` - Exclui as alterações realizadas nos arquivos que estão visíveis (working tree) e não foram adicionados à área _staged_, retornando ao estado do _commit_ atual (_HEAD_).
 
-`git restore <nome_do_arquivo>` - Remove as alterações realizadas no arquivo especificado que não foi adicionado à área _staged_.
+`git restore <nome_do_arquivo>` - Exclui as alterações realizadas no arquivo especificado que não foi adicionado à área _staged_.
 
-`git clean -df` - Remove um arquivo criado que não foi adicionado à área _staged_.
+`git clean -df` - Exclui um arquivo criado que não foi adicionado à área _staged_.
 
 `git add .` - Adiciona as modificações de arquivos, arquivos criados ou removidos no diretório ativo à área de _staged_. No entanto, as modificações são gravadas de fato quando for realizado um _commit_.
 
@@ -72,13 +72,23 @@ git commit -m "mensagem" -m "mensagem adicional"
 
 ### [Trabalhando com servidor local e repositórios remotos](#0) <a id='1.3'></a>
 ```
-git init --bare - Funcionam como um servidor e são considerados repositórios apenas para armazenamento de alterações dos arquivos, e não uma cópia física de cada um dos arquivos.
-git remote - Lista todos repositórios remotos que são reconhecidos localmente.
-git remote add <nome_repositorio_remoto> <caminho> - Adiciona um repositório remoto localmente, sendo que podemos dar um nome para esse repositório e em seguida colar a rota no qual ele se encontra, podendo ser uma rota de rede ou url.
-git remote -v - Além de listar os repositórios remotos, também informa a rota em que ele está localizado.
-git remote remove <nome_repositorio_remoto> - Remove um repositório remoto.
-git clone <caminho_repositorio_remoto> - Copia localmente os dados de um repositório remoto.
+git init --bare
+git remote
+git remote add <nome_repositorio_remoto> <caminho>
+git remote remove <nome_repositorio_remoto>
+git clone <caminho_repositorio_remoto>
 ```
+`git init --bare` - Funcionam como um servidor e são considerados repositórios apenas para armazenamento de alterações dos arquivos, e não uma cópia física de cada um dos arquivos.
+
+`git remote` - Lista todos repositórios remotos que são reconhecidos localmente.
+
+`git remote add <nome_repositorio_remoto> <caminho>` - Adiciona um repositório remoto localmente, sendo que podemos dar um nome para esse repositório e em seguida referenciar a rota no qual ele se encontra, podendo ser uma rota de rede ou url.
+
+`git remote -v` - Além de listar os repositórios remotos, também informa a rota na qual ele está localizado.
+
+`git remote remove <nome_repositorio_remoto>` - Exclui um repositório remoto.
+
+`git clone <caminho_repositorio_remoto>` - Copia localmente os dados de um repositório remoto.
 
 ### [Branchs](#0) <a id='1.4'></a>
 ```
@@ -94,27 +104,27 @@ git push <nome_repositorio_remoto> --delete <nome_branch>
 git branch -m <novo_nome_branch>
 git branch -m <nome_branch> <novo_nome_branch>
 ```
-`git branch` - Lista as branchs de trabalho.
+`git branch` - Lista todas as _branchs_ do repositório local.
 
-`git branch -a` - Lista as branchs remotas.
+`git branch -a` - Lista todas as _branchs_ do repositório remoto.
 
-`git branch <nome_nova_branch>` - Cria uma nova branch a partir da branch atual.
+`git branch <nome_nova_branch>` - Cria uma nova _branch_ a partir da _branch_ atual.
 
-`git switch <nome_branch>` - Navega entre as branch.
+`git switch <nome_branch>` - Navega o repositório para _branch_ informada.
 
-`git switch -c <nome_nova_branch>` - Cria uma nova branch e navega até ela em sequência.
+`git switch -c <nome_nova_branch>` - Cria uma nova _branch_ e navega até ela em sequência.
 
-`git switch -` - Retorna para branch main/master.
+`git switch -` - Retorna para _branch_ main/master.
 
-`git branch -d <nome_branch>` - Exclui uma branch de forma segura, caso não tenha realizado um push dos dados commitados não será possivel realizar a exclusão. É necessário realizar a exclusão a partir de outra branch.
+`git branch -d <nome_branch>` - Exclui uma _branch_ de forma segura, caso não tenha realizado um _push_ dos dados commitados não será possivel realizar a exclusão. É necessário realizar a exclusão a partir de outra branch.
 
-`git branch -D <nome_branch>` - Força a exclusão da branch, idependentemente do seu estado. É necessário realizar a exclusão a partir de outra branch.
+`git branch -D <nome_branch>` - Força a exclusão da _branch_, idependentemente do seu estado. É necessário realizar a exclusão a partir de outra branch.
 
-`git push <nome_repositorio_remoto> --delete <nome_branch>` - Exclui uma branch remota.
+`git push <nome_repositorio_remoto> --delete <nome_branch>` - Exclui uma _branch_ remota.
 
-`git branch -m <novo_nome_branch>` - Renomeia a branch atual de trabalho.
+`git branch -m <novo_nome_branch>` - Renomeia a _branch_ atual de trabalho.
 
-`git branch -m <nome_branch> <novo_nome_branch>` - Renomeia outra branch.
+`git branch -m <nome_branch> <novo_nome_branch>` - Renomeia outra _branch_.
 
 ### [Sincronizando dados e repositórios](#0) <a id='1.5'></a>
 ```
@@ -132,9 +142,9 @@ git revert
 
 `git push <nome_repositorio_remoto> <nome_branch >` - Envia para o repositório remoto as modificações locais.
 
-`git merge <branch_origem>` - Atualiza a branch atual com os dados da branch origem e gera um commit.
+`git merge <branch_origem>` - Atualiza a _branch_ atual com os dados da _branch_ origem e gera um _commit_.
 
-`git rebase <branch_origem>` - Atualiza a branch atual com os dados da branch origem, porém, não gera um commit dessa ação.
+`git rebase <branch_origem>` - Atualiza a branch atual com os dados da _branch_ origem, porém, não gera um _commit_ dessa ação.
 
 ### [Guia de Rebase](#0) <a id='1.6'></a>
 ```
@@ -163,31 +173,31 @@ git stash list
 git stash pop <hash_do_stash>
 git stash clear
 ```
-`git restore --source <hash_commit> <nome_arquivo>` - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
+`git restore --source <hash_commit> <nome_arquivo>` - Restaura o estado de um determinado arquivo do _hash_ parametrizado para sua _branch_ de trabalho.
 
-`git restore --source <hash_commit> .` - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
+`git restore --source <hash_commit> .` - Restaura o estado de todos os arquivos do _hash_ parametrizado para sua branch de trabalho.
 
-`git tag -a <nome_versao> -m "mensagem"` - adiciona uma tag de versao no git, assim podemos ter um controle de atualizações relevantes no repositório.
+`git tag -a <nome_versao> -m "mensagem"` - adiciona uma _tag_ de versao no Git, assim podemos ter um controle de atualizações relevantes no repositório.
 
-`git tag` - Lista as tags encontradas no repositório.
+`git tag` - Lista as _tags_ encontradas no repositório.
 
-`git checkout <versao>` - Restaura o estado de um determinado arquivo da verão parametrizada para sua branch de trabalho desanexado (detached) do controle de versão.
+`git checkout <versao>` - Restaura o estado de um determinado arquivo da versão parametrizada para sua _branch_ de trabalho desanexado(_detached_) do controle de versão.
 
-`git stash` - Salva as alterações de arquivos que ainda não passaram por um commit em uma lista de stash e volta sua branch para ao estado do último commit.
+`git stash` - Salva as alterações de arquivos que ainda não passaram por um _commit_ em uma lista de _stash_ e volta sua _branch_ para ao estado do último _commit_.
 
-`git stash -u` - Inclui no stash arquivos não rastreados e modificados.
+`git stash -u` - Inclui no _stash_ arquivos não rastreados e modificados.
 
-`git stash -a` - Inclui no stash mudanças em arquivos ignorados, não rastreados e modificados.
+`git stash -a` - Inclui no _stash_ mudanças em arquivos ignorados, não rastreados e modificados.
 
-`git stash save "mensagem"` - Adiciona uma mensagem ao stash salvo, caso contrário a mensagem será salva com a hash e mensagem do ultimo commit.
+`git stash save "mensagem"` - Adiciona uma mensagem ao _stash_ salvo, caso contrário a mensagem será salva com a _hash_ e mensagem do último _commit_.
 
-`git stash pop` - Busca o primeiro stash salvo na lista e trás as informações contidas nele, logo após ele apaga essa informação da lista de stash.
+`git stash pop` - Busca o primeiro _stash_ salvo na lista e trás as informações contidas nele, logo após ele apaga essa informação da lista de _stash_.
 
-`git stash list` - Exibe uma lista de stashs criados.
+`git stash list` - Exibe uma lista de _stashs_ criados.
 
-`git stash pop <hash_do_stash>` - Adiciona alterações contidas no stash e o exclui da lista.
+`git stash pop <hash_do_stash>` - Adiciona alterações contidas no _stash_ e o exclui da lista.
 
-`git stash clear` - Limpa a lista de stash.
+`git stash clear` - Limpa a lista de _stash_.
 
 ### [Vizualizando alterações](#0) <a id='1.8'></a>
 ```
@@ -198,17 +208,17 @@ git log --oneline
 git log --author="user_name"
 git log --graph
 ```
-`git log` - Exibe os informações sobre os commits realizados.
+`git log` - Exibe os informações sobre os _commits_ realizados.
 
-`git log -n` - Exibe a quantidade "n" (ex.: 1, 2, 3) de logs dos commits realizados.
+`git log -n` - Exibe a quantidade "n" (ex.: 1, 2, 3) de _logs_ dos _commits_ realizados.
 
-`git log -p` - Exibe as mudanças realizadas em cada commit.
+`git log -p` - Exibe as mudanças realizadas em cada _commit_.
 
-`git log --oneline` - Exibe os commits realiziados de forma reduzida.
+`git log --oneline` - Exibe os _commits_ realiziados de forma reduzida.
 
-`git log --author="user_name"` - Exibe commits realizado por um determinado autor.
+`git log --author="user_name"` - Exibe _commits_ realizado por um determinado autor.
 
-`git log --graph` - Exibe graficamente as mudanças realizadas pela branch atual e possíveis branchs.
+`git log --graph` - Exibe graficamente as mudanças realizadas pela _branch_ atual e possíveis _branchs_.
 
 ## [Informações Adicionais](#0) <a id='2'></a>
 
@@ -233,7 +243,7 @@ __Staged ou Stage (preparado)__
 >Nele podemos anotar arquivos e diretórios que podem ser ignorados e ficam fora da visão do Git para o controle de versionamento, geralmente podem ser arquivos de configuração de ambiente ou qualquer outro que não queremos que faça parte do nosso diretório monitorado pelo Git.
 
 ### [Git Checkout - Switch - Restore](#0)<a id='2.3'></a>
-> A partir da versão 2.23.0 foram implementados novos comandos e ambos vêm com o intuito de dividir responsabilidades do comando "checkout", e serem mais específicos para as funções que se propõem realizar. Os novos comandos são o git restore e o git switch e ambos foram citados nos modulos acima, substituindo os comandos abaixo, por exemplo:
+> A partir da versão 2.23.0 foram implementados novos comandos e ambos vêm com o intuito de dividir responsabilidades do comando "git checkout", e serem mais específicos para as funções que se propõem realizar. Os novos comandos são o "git restore" e o "git switch" e ambos foram citados nos modulos acima, substituindo os comandos abaixo, por exemplo:
 ```
 Switch
 git checkout <nome_branch>
@@ -244,3 +254,15 @@ git checkout -- .
 git checkout -- <nome_do_arquivo>
 git checkout <hash_commit>
 ```
+
+## [Cursos](#0) <a id='4'></a>
+* [__Git e Github: controle e compartilhe seu código__](https://cursos.alura.com.br/course/git-github-controle-de-versao)
+* [__Git e GitHub: repositório, commit e versões__](https://cursos.alura.com.br/course/git-github-repositorio-commit-versoes)
+* [__Git e Github: estratégias de ramificação, Conflitos e Pull Requests__](https://cursos.alura.com.br/course/git-github-branching-conflitos-pull-requests)
+
+## [Referências](#0) <a id='4'></a>
+
+* [__Cheatsheets__](https://devhints.io/)
+* [__Como escrever um README incrível no seu Github__](https://www.alura.com.br/artigos/escrever-bom-readme)
+* [__Git Documentação__](https://git-scm.com/docs/git/pt_BR)
+* [__What is version control?__](https://www.atlassian.com/git/tutorials/what-is-version-control)
