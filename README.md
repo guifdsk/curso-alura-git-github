@@ -1,11 +1,11 @@
-# Modulo Git e GitHub
+# Módulo Git e GitHub
 
 ## Índice <a id='0'></a>
 - [Comandos Básicos](#1)
    - [Iniciando um repositório e versionamento pelo Git](#1.1)
    - [Atualizando modificações de um arquivo](#1.2)
    - [Criando um servidor local para compartilhar dados](#1.3)
-   - [Ramificações](#1.4)
+   - [Branchs](#1.4)
    - [Sincronizando dados e repositórios](#1.5)
    - [Guia de Rebase](#1.6)
    - [Versões de repositórios e de arquivos](#1.7)
@@ -16,26 +16,43 @@
 
 ### [Iniciando um repositório e versionamento pelo Git](#0) <a id='1.1'></a>
 ```
-mkdir - Cria um novo diretório.
-cd - Navega entre os diretórios.
-git init - Cria um repositório para monitoramento de versões.
+mkdir <nome_do_diretorio>
+cd <nome_do_diretorio>
+git init
 ```
+`mkdir` - Cria um novo diretório no local atual.
+`cd <nome_do_diretorio>` - Navega entre os diretórios.
+`git init` - Transforma o diretório atual em um repositório do Git. 
 
 ### [Atualizando modificações de um arquivo](#0) <a id='1.2'></a>
 ```
-touch <nome_do_arquivo> - Cria um arquivo.
-git status - Mostra estágio dos arquivos no repositório.
-git restore . - Remove as alterações realizadas em todos os arquivos que não foram para area de stage, deixando os arquivos como estavam no último commit.
-git restore <nome_do_arquivo> - Remove as alterações realizadas em um arquivo que nao foi para area de stage, deixando-o como estava no último commit.
-git clean -df - Remove um arquivo criado que não foi para area de stage.
-git add <nome_do_arquivo> - Adiciona o arquivo especificado na area de stage.
-git add . - Adiciona todos arquivos que contenham modificações, foram criados ou removidos na area de stage.
-git restore --staged . - Retira todos arquivos da area de stage.
-git restore --staged <nome_do_arquivo> - Retira um arquivo da area de stage.
-git commit -m "mensagem" - Grava o estado do seu repositório atual + mensagem das alterações realizadas.
-git commit -am "mensagem" - Adiciona todos os arquivos modificados na área de stage e, em seguida, grava o estado do seu repositório atual + mensagem das alterações realizadas.
-git commit -m "mensagem" -m "mensagem adicional" - Grava o estado do seu repositório atual + duas mensagens das alterações realizadas.
+touch <nome_do_arquivo>
+git status
+git restore .
+git restore <nome_do_arquivo>
+git clean -df
+git add <nome_do_arquivo>
+git add .
+git restore --staged .
+git restore --staged <nome_do_arquivo>
+git commit -m "mensagem"
+git commit -am "mensagem"
+git commit -m "mensagem" -m "mensagem adicional"
 ```
+`touch <nome_do_arquivo>` - É usado para criar um arquivo vazio.
+`git status` - Lista os arquivos e seus respectivos estágios no diretório, sendo eles: preparados(_Staged_), despreparados(_Modified_/_Deleted_) e não foram monitorados(_Untracked_).
+`git restore .` - Remove as alterações realizadas nos arquivos que estão visíveis (working tree) para serem idênticos aos do _commit_ atual (_HEAD_) que não foram adicionados à área _staged_.
+`git restore <nome_do_arquivo>` - Remove as alterações realizadas no arquivo especificado que não foi adicionado à área _staged_.
+`git clean -df` - Remove um arquivo criado que não foi adicionado à área _staged_.
+`git add <nome_do_arquivo>` - Adiciona as modificações do arquivo especificado no diretório ativo à área de _staged_. No entanto, as alterações não são gravadas de fato quando for realizado um _commit_.
+`git add .` - Adiciona as modificações de arquivos, arquivos criados ou removidos no diretório ativo à área de _staged_.
+`git restore --staged .` - Retira todos arquivos que foram adicionados à área de _staged_.
+`git restore --staged <nome_do_arquivo>` - Retira o arquivo especificado que foi adicionado à área de _staged_.
+`git commit -m "mensagem"` - Grava o estado do seu repositório atual, associado com uma mensagem referente às mudanças. Somente as mudanças com estado _staged_ farão parte do _commit_. 
+`git commit -am "mensagem"` - Associa o comando "git add ." ao comando de _commit_, adicionado todos arquivos à área de _staged_ antes de realizar o _commit_.
+
+Adiciona todos os arquivos modificados na área de stage e, em seguida, grava o estado do seu repositório atual + mensagem das alterações realizadas.
+`git commit -m "mensagem" -m "mensagem adicional"` - Grava o estado do seu repositório atual + duas mensagens das alterações realizadas.
 
 ### [Trabalhando com servidor local e repositórios remotos](#0) <a id='1.3'></a>
 ```
@@ -49,29 +66,45 @@ git clone <caminho_repositorio_remoto> - Copia localmente os dados de um reposit
 
 ### [Branchs](#0) <a id='1.4'></a>
 ```
-git branch - Lista as branchs de trabalho.
-git branch -a - Lista as branchs remotas.
-git branch <nome_nova_branch> - Cria uma nova branch a partir da branch atual.
-git switch <nome_branch> - Navega entre as branch.
-git switch -c <nome_nova_branch> - Cria uma nova branch e navega até ela em sequência.
-git switch - - Retorna para branch main/master
-git branch -d <nome_branch> - Exclui uma branch de forma segura, caso não tenha realizado um push dos dados commitados não será possivel realizar a exclusão. É necessário realizar a exclusão a partir de outra branch.
-git branch -D <nome_branch> - Força a exclusão da branch, idependentemente do seu estado. É necessário realizar a exclusão a partir de outra branch.
-git push <nome_repositorio_remoto> --delete <nome_branch> - Exclui uma branch remota.
-git branch -m <novo_nome_branch> - Renomeia a branch atual de trabalho.
-git branch -m <nome_branch> <novo_nome_branch> - Renomeia outra branch.
+git branch
+git branch
+git branch
+git switch
+git switch
+git switch -
+git branch -d <nome_branch>
+git branch -D <nome_branch>
+git push <nome_repositorio_remoto> --delete <nome_branch>
+git branch -m <novo_nome_branch>
+git branch -m <nome_branch> <novo_nome_branch>
 ```
+`git branch` - Lista as branchs de trabalho.
+`git branch -a` - Lista as branchs remotas.
+`git branch <nome_nova_branch>` - Cria uma nova branch a partir da branch atual.
+`git switch <nome_branch>` - Navega entre as branch.
+`git switch -c <nome_nova_branch>` - Cria uma nova branch e navega até ela em sequência.
+`git switch -` - Retorna para branch main/master
+`git branch -d <nome_branch>` - Exclui uma branch de forma segura, caso não tenha realizado um push dos dados commitados não será possivel realizar a exclusão. É necessário realizar a exclusão a partir de outra branch.
+`git branch -D <nome_branch>` - Força a exclusão da branch, idependentemente do seu estado. É necessário realizar a exclusão a partir de outra branch.
+`git push <nome_repositorio_remoto> --delete <nome_branch>` - Exclui uma branch remota.
+`git branch -m <novo_nome_branch>` - Renomeia a branch atual de trabalho.
+`git branch -m <nome_branch> <novo_nome_branch>` - Renomeia outra branch.
 
 ### [Sincronizando dados e repositórios](#0) <a id='1.5'></a>
 ```
-git fetch <nome_repositorio_remoto> <nome_branch > - Traz referências do repositório remoto localmente a fim de verificar diferenças que possam ter ocorrido mas não gera nenhum tipo de mudança localmente.
-git pull <nome_repositorio_remoto> <nome_branch > - Traz referências do repositório remoto incorporando-as localmente. 
-git push <nome_repositorio_remoto> <nome_branch > - Envia para o repositório remoto as modificações locais.
-git merge <branch_origem> - Atualiza a branch atual com os dados da branch origem e gera um commit
-git rebase <branch_origem> - Atualiza a branch atual com os dados da branch origem, porém, não gera um commit dessa ação.
+git fetch <nome_repositorio_remoto> <nome_branch>
+git pull <nome_repositorio_remoto> <nome_branch>
+git push <nome_repositorio_remoto> <nome_branch>
+git merge <branch_origem>
+git rebase <branch_origem>
 
 git revert
 ```
+`git fetch <nome_repositorio_remoto> <nome_branch >` - Traz referências do repositório remoto localmente a fim de verificar diferenças que possam ter ocorrido mas não gera nenhum tipo de mudança localmente.
+`git pull <nome_repositorio_remoto> <nome_branch >` - Traz referências do repositório remoto incorporando-as localmente. 
+`git push <nome_repositorio_remoto> <nome_branch >` - Envia para o repositório remoto as modificações locais.
+`git merge <branch_origem>` - Atualiza a branch atual com os dados da branch origem e gera um commit
+`git rebase <branch_origem>` - Atualiza a branch atual com os dados da branch origem, porém, não gera um commit dessa ação.
 
 ### [Guia de Rebase](#0) <a id='1.6'></a>
 ```
@@ -86,31 +119,49 @@ git merge <branch_de_trabalho>
 
 ### [Versões de repositórios e de arquivos](#0) <a id='1.7'></a>
 ```
-git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
-git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
-git tag -a <nome_versao> -m "mensagem" - adiciona uma tag de versao no git, assim podemos ter um controle de atualizações relevantes no repositório.
-git tag - Lista as tags encontradas no repositório.
-git checkout <versao> - Restaura o estado de um determinado arquivo da verão parametrizada para sua branch de trabalho desanexado (detached) do controle de versão.
-git stash - Salva as alterações de arquivos que ainda não passaram por um commit em uma lista de stash e volta sua branch para ao estado do último commit.
-git stash -u - Inclui no stash arquivos não rastreados e modificados.
-git stash -a - Inclui no stash mudanças em arquivos ignorados, não rastreados e modificados.
-git stash save "mensagem" - Adiciona uma mensagem ao stash salvo, caso contrário a mensagem será salva com a hash e mensagem do ultimo commit.
-git stash pop - Busca o primeiro stash salvo na lista e trás as informações contidas nele, logo após ele apaga essa informação da lista de stash.
-git stash list - Exibe uma lista de stashs criados.
-git stash pop <hash_do_stash> - Adiciona alterações contidas no stash e o exclui da lista.
-git stash clear - Limpa a lista de stash.
+git restore --source <hash_commit> <nome_arquivo>
+git restore --source <hash_commit> .
+git tag -a <nome_versao> -m "mensagem"
+git tag
+git checkout <tag_versao>
+git stash
+git stash -u
+git stash -a
+git stash save "mensagem"
+git stash pop
+git stash list
+git stash pop <hash_do_stash>
+git stash clear
 ```
+`git restore --source <hash_commit> <nome_arquivo>` - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
+`git restore --source <hash_commit> .` - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
+`git tag -a <nome_versao> -m "mensagem"` - adiciona uma tag de versao no git, assim podemos ter um controle de atualizações relevantes no repositório.
+`git tag` - Lista as tags encontradas no repositório.
+`git checkout <versao>` - Restaura o estado de um determinado arquivo da verão parametrizada para sua branch de trabalho desanexado (detached) do controle de versão.
+`git stash` - Salva as alterações de arquivos que ainda não passaram por um commit em uma lista de stash e volta sua branch para ao estado do último commit.
+`git stash -u` - Inclui no stash arquivos não rastreados e modificados.
+`git stash -a` - Inclui no stash mudanças em arquivos ignorados, não rastreados e modificados.
+`git stash save "mensagem"` - Adiciona uma mensagem ao stash salvo, caso contrário a mensagem será salva com a hash e mensagem do ultimo commit.
+`git stash pop` - Busca o primeiro stash salvo na lista e trás as informações contidas nele, logo após ele apaga essa informação da lista de stash.
+`git stash list` - Exibe uma lista de stashs criados.
+`git stash pop <hash_do_stash>` - Adiciona alterações contidas no stash e o exclui da lista.
+`git stash clear` - Limpa a lista de stash.
 
 ### [Vizualizando alterações](#0) <a id='1.8'></a>
 ```
-git log - Exibe os informações sobre os commits realizados.
-git log -n - Exibe a quantidade "n" (ex.: 1, 2, 3) de logs dos commits realizados.
-git log -p - Exibe as mudanças realizadas em cada commit.
-git log --oneline - Exibe os commits realiziados de forma reduzida.
-git log --author="user_name" - Exibe commits realizado por um determinado autor.
-git log --graph - Exibe graficamente as mudanças realizadas pela branch atual e possíveis branchs.
-
+git log
+git log -n
+git log -p
+git log --oneline
+git log --author="user_name"
+git log --graph
 ```
+`git log` - Exibe os informações sobre os commits realizados.
+`git log -n` - Exibe a quantidade "n" (ex.: 1, 2, 3) de logs dos commits realizados.
+`git log -p` - Exibe as mudanças realizadas em cada commit.
+`git log --oneline` - Exibe os commits realiziados de forma reduzida.
+`git log --author="user_name"` - Exibe commits realizado por um determinado autor.
+`git log --graph` - Exibe graficamente as mudanças realizadas pela branch atual e possíveis branchs.
 
 ## [Informações Adicionais](#0) <a id='2'></a>
 
