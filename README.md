@@ -219,6 +219,7 @@ git log --oneline
 git log --author="user_name"
 git log --graph
 git diff
+git show <hash_commit>
 git blame <nome_do_arquivo>
 ```
 `git log` - Exibe os informações sobre os _commits_ realizados.
@@ -234,6 +235,8 @@ git blame <nome_do_arquivo>
 `git log --graph` - Exibe graficamente as mudanças realizadas pela _branch_ atual e possíveis _branchs_.
 
 `git diff` - Exibe as alterações realizadas em relação ao último _commit_.
+
+`git show <hash_commit>` - Exibe todas as alterações aplicadas pelo commit com o hash informado.
 
 `git blame <nome_do_arquivo>` - Exibe todas linhas do arquivo parametrizado indicando os autores que realizaram a última modificação em cada uma das linhas.
 
