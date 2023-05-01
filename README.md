@@ -14,7 +14,8 @@
   - [Estágios de modificação dos arquivos no repositório](#2.1)
   - [Ignorando arquivos com .gitignore](#2.2)
   - [Git Checkout - Switch - Restore](#2.2)
-  
+- [Cursos](#3)  
+- [Referências](#4)  
 
 
 ## [Comandos Básicos](#0) <a id='1'></a>
@@ -255,7 +256,7 @@ git checkout -- <nome_do_arquivo>
 git checkout <hash_commit>
 ```
 
-## [Cursos](#0) <a id='4'></a>
+## [Cursos](#0) <a id='3'></a>
 * [__Git e Github: controle e compartilhe seu código__](https://cursos.alura.com.br/course/git-github-controle-de-versao)
 * [__Git e GitHub: repositório, commit e versões__](https://cursos.alura.com.br/course/git-github-repositorio-commit-versoes)
 * [__Git e Github: estratégias de ramificação, Conflitos e Pull Requests__](https://cursos.alura.com.br/course/git-github-branching-conflitos-pull-requests)
