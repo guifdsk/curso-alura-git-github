@@ -134,7 +134,6 @@ git stash pop <hash_do_stash>
 git stash clear
 ```
 `git restore --source <hash_commit> <nome_arquivo>` - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
-
 `git restore --source <hash_commit> .` - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
 `git tag -a <nome_versao> -m "mensagem"` - adiciona uma tag de versao no git, assim podemos ter um controle de atualizações relevantes no repositório.
 `git tag` - Lista as tags encontradas no repositório.
