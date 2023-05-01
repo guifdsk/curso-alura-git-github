@@ -89,8 +89,16 @@ git merge <branch_de_trabalho>
 git restore --source <hash_commit> <nome_arquivo> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho.
 git restore --source <hash_commit> . - Restaura o estado de todos os arquivos do hash parametrizado para sua branch de trabalho.
 git tag -a <nome_versao> -m "mensagem" - adiciona uma tag de versao no git, assim podemos ter um controle de atualizações relevantes no repositório.
+git tag - Lista as tags encontradas no repositório.
 git checkout <versao> - Restaura o estado de um determinado arquivo da verão parametrizada para sua branch de trabalho desanexado (detached) do controle de versão.
-stash
+git stash - Salva as alterações de arquivos que ainda não passaram por um commit em uma lista de stash e volta sua branch para ao estado do último commit.
+git stash -u - Inclui no stash arquivos não rastreados e modificados.
+git stash -a - Inclui no stash mudanças em arquivos ignorados, não rastreados e modificados.
+git stash save "mensagem" - Adiciona uma mensagem ao stash salvo, caso contrário a mensagem será salva com a hash e mensagem do ultimo commit.
+git stash pop - Busca o primeiro stash salvo na lista e trás as informações contidas nele, logo após ele apaga essa informação da lista de stash.
+git stash list - Exibe uma lista de stashs criados.
+git stash pop <hash_do_stash> - Adiciona alterações contidas no stash e o exclui da lista.
+git stash clear - Limpa a lista de stash.
 ```
 
 ### [Vizualizando alterações](#0) <a id='1.8'></a>
@@ -101,6 +109,7 @@ git log -p - Exibe as mudanças realizadas em cada commit.
 git log --oneline - Exibe os commits realiziados de forma reduzida.
 git log --author="user_name" - Exibe commits realizado por um determinado autor.
 git log --graph - Exibe graficamente as mudanças realizadas pela branch atual e possíveis branchs.
+
 ```
 
 ## [Informações Adicionais](#0) <a id='2'></a>
