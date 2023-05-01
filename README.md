@@ -134,8 +134,7 @@ git pull <nome_repositorio_remoto> <nome_branch>
 git push <nome_repositorio_remoto> <nome_branch>
 git merge <branch_origem>
 git rebase <branch_origem>
-
-git revert
+git revert <hash_commit>
 ```
 `git fetch <nome_repositorio_remoto> <nome_branch >` - Traz referências do repositório remoto localmente a fim de verificar diferenças que possam ter ocorrido mas não gera nenhum tipo de mudança localmente.
 
@@ -146,6 +145,8 @@ git revert
 `git merge <branch_origem>` - Atualiza a _branch_ atual com os dados da _branch_ origem e gera um _commit_.
 
 `git rebase <branch_origem>` - Atualiza a branch atual com os dados da _branch_ origem, porém, não gera um _commit_ dessa ação.
+
+`git revert <hash_commit>` - Utilizado para desfazer um _commit_ enviado para _branch_ remota, o _revert_ altera o estado atual do repositório para um _commit_ específico, gerando um novo _commit_ para registrar a operação.
 
 ### [Guia de Rebase](#0) <a id='1.6'></a>
 ```
