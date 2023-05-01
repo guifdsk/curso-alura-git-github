@@ -2,15 +2,20 @@
 
 ## Índice <a id='0'></a>
 - [Comandos Básicos](#1)
-   - [Iniciando um repositório e versionamento pelo Git](#1.1)
-   - [Atualizando modificações de um arquivo](#1.2)
-   - [Criando um servidor local para compartilhar dados](#1.3)
-   - [Branchs](#1.4)
-   - [Sincronizando dados e repositórios](#1.5)
-   - [Guia de Rebase](#1.6)
-   - [Versões de repositórios e de arquivos](#1.7)
-   - [Vizualizando alterações](#1.8)
- - [Informações Adicionais](#2)
+  - [Iniciando um repositório e versionamento pelo Git](#1.1)
+  - [Atualizando modificações de um arquivo](#1.2)
+  - [Criando um servidor local para compartilhar dados](#1.3)
+  - [Branchs](#1.4)
+  - [Sincronizando dados e repositórios](#1.5)
+  - [Guia de Rebase](#1.6)
+  - [Versões de repositórios e de arquivos](#1.7)
+  - [Vizualizando alterações](#1.8)
+- [Informações Adicionais](#2)
+  - [Estágios de modificação dos arquivos no repositório](#2.1)
+  - [Ignorando arquivos com .gitignore](#2.2)
+  - [Git Checkout - Switch - Restore](#2.2)
+  
+
 
 ## [Comandos Básicos](#0) <a id='1'></a>
 
@@ -45,15 +50,15 @@ git commit -m "mensagem" -m "mensagem adicional"
 
 `git status` - Lista os arquivos e seus respectivos estágios no diretório, sendo eles: preparados(_Staged_), despreparados(_Modified_/_Deleted_) e não foram monitorados(_Untracked_).
 
-`git restore .` - Remove as alterações realizadas nos arquivos que estão visíveis (working tree) para serem idênticos aos do _commit_ atual (_HEAD_) que não foram adicionados à área _staged_.
+`git restore .` - Remove as alterações realizadas nos arquivos que estão visíveis (working tree) e não foram adicionados à área _staged_, retornando ao estado do _commit_ atual (_HEAD_).
 
 `git restore <nome_do_arquivo>` - Remove as alterações realizadas no arquivo especificado que não foi adicionado à área _staged_.
 
 `git clean -df` - Remove um arquivo criado que não foi adicionado à área _staged_.
 
-`git add <nome_do_arquivo>` - Adiciona as modificações do arquivo especificado no diretório ativo à área de _staged_. No entanto, as alterações não são gravadas de fato quando for realizado um _commit_.
+`git add .` - Adiciona as modificações de arquivos, arquivos criados ou removidos no diretório ativo à área de _staged_. No entanto, as modificações são gravadas de fato quando for realizado um _commit_.
 
-`git add .` - Adiciona as modificações de arquivos, arquivos criados ou removidos no diretório ativo à área de _staged_.
+`git add <nome_do_arquivo>` - Adiciona as modificações do arquivo especificado no diretório ativo à área de _staged_.
 
 `git restore --staged .` - Retira todos arquivos que foram adicionados à área de _staged_.
 
@@ -63,7 +68,7 @@ git commit -m "mensagem" -m "mensagem adicional"
 
 `git commit -am "mensagem"` - Associa o comando "git add ." ao comando de _commit_, adicionado todos arquivos à área de _staged_ antes de realizar o _commit_.
 
-`git commit -m "mensagem" -m "mensagem adicional"` - Grava o estado do seu repositório atual + duas mensagens das alterações realizadas.
+`git commit -m "mensagem" -m "mensagem adicional"` - Grava o estado do seu repositório atual, associado com duas mensagens referente às mudanças, sendo a segunda uma descrição mais detalhada.
 
 ### [Trabalhando com servidor local e repositórios remotos](#0) <a id='1.3'></a>
 ```
@@ -78,10 +83,10 @@ git clone <caminho_repositorio_remoto> - Copia localmente os dados de um reposit
 ### [Branchs](#0) <a id='1.4'></a>
 ```
 git branch
-git branch
-git branch
-git switch
-git switch
+git branch -a
+git branch <nome_nova_branch>
+git switch <nome_branch>
+git switch -c <nome_nova_branch>
 git switch -
 git branch -d <nome_branch>
 git branch -D <nome_branch>
@@ -194,10 +199,15 @@ git log --author="user_name"
 git log --graph
 ```
 `git log` - Exibe os informações sobre os commits realizados.
+
 `git log -n` - Exibe a quantidade "n" (ex.: 1, 2, 3) de logs dos commits realizados.
+
 `git log -p` - Exibe as mudanças realizadas em cada commit.
+
 `git log --oneline` - Exibe os commits realiziados de forma reduzida.
+
 `git log --author="user_name"` - Exibe commits realizado por um determinado autor.
+
 `git log --graph` - Exibe graficamente as mudanças realizadas pela branch atual e possíveis branchs.
 
 ## [Informações Adicionais](#0) <a id='2'></a>
@@ -218,19 +228,19 @@ __Deleted (excluido)__
 __Staged ou Stage (preparado)__
 >Após realizar alterações ou criação de arquivos, precisamos informar ao Git quais deles serão adicionados à nova versão, o Git precisa saber que o arquivo foi modificado e agora está na área de preparação para ser consolidado.
 
-### [Ignorando arquivos com .gitignore](#0)
+### [Ignorando arquivos com .gitignore](#0) <a id='2.2'></a>
 
 >Nele podemos anotar arquivos e diretórios que podem ser ignorados e ficam fora da visão do Git para o controle de versionamento, geralmente podem ser arquivos de configuração de ambiente ou qualquer outro que não queremos que faça parte do nosso diretório monitorado pelo Git.
 
-### [Git Checkout - Switch - Restore](#0)
+### [Git Checkout - Switch - Restore](#0)<a id='2.3'></a>
 > A partir da versão 2.23.0 foram implementados novos comandos e ambos vêm com o intuito de dividir responsabilidades do comando "checkout", e serem mais específicos para as funções que se propõem realizar. Os novos comandos são o git restore e o git switch e ambos foram citados nos modulos acima, substituindo os comandos abaixo, por exemplo:
 ```
 Switch
-git checkout <nome_branch> - Navega entre as branch.
-git checkout -b <nome_nova_branch> - Cria uma nova branch e navega até ela em sequência.
+git checkout <nome_branch>
+git checkout -b <nome_nova_branch>
 
 Restore
-git checkout -- . - Remove as alterações realizadas em todos os arquivos que não foram para area de stage, deixando os arquivos como estavam no último commit.
-git checkout -- <nome_do_arquivo> - Remove as alterações realizadas em um arquivo que nao foi para area de stage, deixando-o como estava no último commit.
-git checkout <hash_commit> - Restaura o estado de um determinado arquivo do hash parametrizado para sua branch de trabalho desanexado (detached) do controle de versão.
+git checkout -- .
+git checkout -- <nome_do_arquivo>
+git checkout <hash_commit>
 ```
