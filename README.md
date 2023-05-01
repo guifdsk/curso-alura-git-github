@@ -263,6 +263,26 @@ git checkout -- <nome_do_arquivo>
 git checkout <hash_commit>
 ```
 
+### [Vinculando uma pull request a um problema usando uma palavra-chave](#0)<a id='2.4'></a>
+
+Quando uma **_ISSUE_** é aberta podemos resolvê-la e fecha-la utulizando um "_pull request_" para _branch_ padrão utilizando uma palavra-chave seguido da referência da **_ISSUE_** em questão para realizar um vinculo entre elas. Abaixo podemos ver exemplo de palavras-chave e como utilizá-las.
+
+- close
+- closes
+- closed
+- fix
+- fixes
+- fixed
+- resolve
+- resolves
+- resolved
+
+ Problema                                 | Vinculo                                                     |Sintaxe
+:---------------------------------------: | :---------------------------------------------------------: | :--------------------------------------------------------------:
+Problema no mesmo repositório             | palavra-chave + Hash da Issue                               | `closes` #10
+Problema em um repositório diferente      | palavra-chave + proprietário / repositório + Hasg da Issue  | `fixes` octo-org/octo-repo#100
+Vários problemas                          | Use a sintaxe que resolve cada problema                     | `resolves` #10, resolves #123, `resolves` octo-org/octo-repo#100
+
 ## [Cursos](#0) <a id='3'></a>
 * [__Git e Github: controle e compartilhe seu código__](https://cursos.alura.com.br/course/git-github-controle-de-versao)
 * [__Git e GitHub: repositório, commit e versões__](https://cursos.alura.com.br/course/git-github-repositorio-commit-versoes)
