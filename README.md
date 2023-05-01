@@ -137,6 +137,7 @@ git rebase <branch_origem>
 git rebase -i HEAD~<n>
 git rebase -i <hash_commit>
 git revert <hash_commit>
+git cherry-pick <hash_commit>
 ```
 `git fetch <nome_repositorio_remoto> <nome_branch >` - Traz referências do repositório remoto localmente a fim de verificar diferenças que possam ter ocorrido mas não gera nenhum tipo de mudança localmente.
 
@@ -153,6 +154,8 @@ git revert <hash_commit>
 `git rebase -i <hash_commit>` Unifica os _commits_ realizados a partir do estado atual do repositório até o _commit_ anterior informado no qual queremos unificar.
 
 `git revert <hash_commit>` - Utilizado para desfazer um _commit_ enviado para _branch_ remota, o _revert_ altera o estado atual do repositório para um _commit_ específico, gerando um novo _commit_ para registrar a operação.
+
+`git cherry-pick <hash_commit>` - É utilizado para adicionar à sua _branch_ de trabalho um _commit_ específico de outra _branch_, assim, atualizando seu repositório somente com as informações necessárias.
 
 ### [Guia de Rebase](#0) <a id='1.6'></a>
 ```
@@ -215,6 +218,7 @@ git log -p
 git log --oneline
 git log --author="user_name"
 git log --graph
+git diff
 ```
 `git log` - Exibe os informações sobre os _commits_ realizados.
 
@@ -227,6 +231,8 @@ git log --graph
 `git log --author="user_name"` - Exibe _commits_ realizado por um determinado autor.
 
 `git log --graph` - Exibe graficamente as mudanças realizadas pela _branch_ atual e possíveis _branchs_.
+
+`git diff` - Exibe as alterações realizadas em relação ao último _commit_.
 
 ## [Informações Adicionais](#0) <a id='2'></a>
 
@@ -281,7 +287,7 @@ Quando uma **_ISSUE_** é aberta podemos resolvê-la e fecha-la utulizando um "_
 :---------------------------------------: | :---------------------------------------------------------: | :--------------------------------------------------------------:
 Problema no mesmo repositório             | palavra-chave + Hash da Issue                               | `closes` #10
 Problema em um repositório diferente      | palavra-chave + proprietário / repositório + Hasg da Issue  | `fixes` octo-org/octo-repo#100
-Vários problemas                          | Use a sintaxe que resolve cada problema                     | `resolves` #10, resolves #123, `resolves` octo-org/octo-repo#100
+Vários problemas                          | Use a sintaxe que resolve cada problema                     | `resolves` #10, `resolves` #123, `resolves` octo-org/octo-repo#100
 
 ## [Cursos](#0) <a id='3'></a>
 * [__Git e Github: controle e compartilhe seu código__](https://cursos.alura.com.br/course/git-github-controle-de-versao)
